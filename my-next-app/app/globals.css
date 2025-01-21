@@ -1,0 +1,181 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  min-height: 100vh;
+  font-family: 'Microsoft JhengHei', Arial, sans-serif;
+}
+
+table {
+  margin-top: 10px;
+  width: calc(90% + 10px);
+  padding: 20px 30px;
+  border-radius: 10px;
+  background-color: #ffffff;
+}
+
+th, td {
+  text-align: left;
+  padding: 2px 5px;
+}
+
+a {
+  cursor: pointer;
+}
+
+a:hover {
+  opacity: 0.5;
+}
+
+.route-list {
+  background-color: #272727;
+  width: 12%;
+  min-width: 100px;
+  color: #D0D0D0;
+}
+
+.route-logo {
+  padding: 15px;
+  display: flex;
+  justify-content: center;
+}
+.route-logo > .title {
+  font-size: 20px;
+  font-weight: bolder;
+}
+
+
+.route-element {
+  display: flex;
+  /* justify-content: space-between; */
+  align-items: center;
+  padding: 10px;
+}
+
+.route-element > img {
+  width: 30px;
+}
+
+.route-element > .title {
+  margin-left: 10px;
+}
+
+/* table 寬度 */
+.col-xs-0 {
+  width: 1%;
+}
+
+.col-xs-1 {
+  width: 5%;
+}
+
+.col-xs-2 {
+  width: 10%;
+}
+
+.col-xs-4 {
+  width: 20%;
+}
+
+.col-xs-6 {
+  width: 30%;
+}
+
+/* crawl */
+.main-container {
+  padding: 10px 10px 10px 30px;
+  width: 88%;
+  background-color: #F0F0F0;
+}
+
+.pannel {
+  margin-right: 10px;
+}
+
+.overview {
+}
+
+.overview-element {
+  display: flex;
+}
+
+.overview-element .title {
+  margin-right: 5px;
+}
+
+.template-base {
+  width: 45%;
+  /* min-height: 200px; */
+
+  padding: 20px 30px;
+  border-radius: 10px;
+  background-color: #ffffff;
+}
+
+.template-base .title {
+  font-weight: bolder;
+}
+
+.template-base a {
+  background-color: #005AB5;
+  /* color: #D0D0D0; */
+  color: white;
+  border-radius: 5px;
+  margin-right: 5px;
+  margin-bottom: 5px;
+  padding: 5px 10px;
+}
+
+.template-base a:hover {
+  background-color: #02F78E;
+  color: #272727;
+}
+
+.template-content-base {
+  margin-top: 20px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.information-base {
+  
+}
+
+.information-base .summary {
+  border-bottom: 1px solid #272727;
+}
+
+.information-image-base {
+  /* display: flex; */
+}
+
+.information-image-base img {
+  height: 400px;
+  width: 400px;
+  object-fit: contain;
+}
+
+.table-base {}
+
+.table-base img {
+  height: 30px;
+  width: 30px;
+}
