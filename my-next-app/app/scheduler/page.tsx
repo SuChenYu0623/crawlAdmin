@@ -22,35 +22,21 @@ const apiPostBase = async (url: string, payload: string) => {
     .then(res => res.json())
 }
 
-const fetchCollectUrlsTask = async () => await apiPostBase('/api/scheduler/collectUrlsTask', '{}');
+const fetchCollectUrlsTask = async (payload: string) => await apiPostBase('/api/scheduler/collectUrlsTask', payload);
 const fetchGetLoopUrlTaskPayload = async (size: number) => await apiGetBase(`/api/scheduler/getLoopUrlTaskPayload?size=${size}`);
 const fetchLoopUrlTask = async (payload: string) => await apiPostBase(`/api/scheduler/loopUrlTask`, payload);
 // const fetchLoopUrlTask = async (size: number) => await apiGetBase(`/api/scheduler/loopUrlTask?payload=${size}`);
 
-function SchedulerPannel({ loopUrlsTaskFunc, collectUrlsTaskFunc }: {
-  loopUrlsTaskFunc: React.MouseEventHandler<HTMLAnchorElement>,
-  collectUrlsTaskFunc: React.MouseEventHandler<HTMLAnchorElement>
-}) {
-  return (
-    <div className="template-base pannel">
-      <div className="title">Scheduler Pannel</div>
-      <div className="template-content-base">
-        <a onClick={loopUrlsTaskFunc}>loopUrl</a>
-        <a onClick={collectUrlsTaskFunc}>collect cats</a>
-      </div>
-    </div>
-  )
-}
-
 export default function Scheduler() {
   // const testFunc = () => console.log('test Func')
-  const collectUrlsTask = async () => {
-    let data = await fetchCollectUrlsTask();
+  const collectUrlsTask = async (press: string) => {
+    let payload = { workType: 'collectUrls', press: press }
+    let data = await fetchCollectUrlsTask(JSON.stringify(payload));
     console.log(data)
   }
 
   const loopUrlsTask = async () => {
-    let payload = await fetchGetLoopUrlTaskPayload(5)
+    let payload = await fetchGetLoopUrlTaskPayload(10)
     console.log('payload', payload)
     let data = await fetchLoopUrlTask(JSON.stringify(payload));
     // let data = await fetchLoopUrlTask(5);
@@ -59,8 +45,14 @@ export default function Scheduler() {
   return (
     <div>
       <div style={{ display: "flex", marginTop: '50px' }}>
-        <SchedulerPannel collectUrlsTaskFunc={collectUrlsTask} loopUrlsTaskFunc={loopUrlsTask} />
-        {/* <CrawlOverview crawlItemsLength={crawlItemsLength} /> */}
+        <div className="template-base pannel">
+          <div className="title">Scheduler Pannel</div>
+          <div className="template-content-base">
+            <a onClick={loopUrlsTask}>loopUrl</a>
+            <a onClick={() => collectUrlsTask('nytimes')}>nytimes collectUrls</a>
+            <a onClick={() => collectUrlsTask('bbc')}>bbc collectUrls</a>
+          </div>
+        </div>
       </div>
       <div>
         {/* <CrawlItemsTable crawlItems={crawlItems} /> */}

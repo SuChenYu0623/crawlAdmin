@@ -3,8 +3,10 @@ let FASTAPI_PORT='8000'
 
 
 export default async function handler(req, res) {
-  let workType = 'collectUrls'
-  let payload = { workType }
+  // const { workType, press } = req.query;
+  // let workType = 'collectUrls'
+  // let payload = { workType, press }
+  const { payload } = req.body;
   let data = await fetch(`http://${FASTAPI_HOST}:${FASTAPI_PORT}/v1/task/collectUrlsTask/`, {
     "headers": {
       "accept": "*/*",
