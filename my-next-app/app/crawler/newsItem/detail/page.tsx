@@ -63,7 +63,7 @@ export default function DetailNewsItem() {
           const { src, alt, desc } = image_with_desc;
           return (
             <div key={idx} className="template-base overview" style={{ width: '90%', display: 'flex' }}>
-              <img src={src} />
+              <img style={{width: '40%'}} src={src} />
               <div style={{ marginLeft: '10px' }}>
                 <div>
                   <div className="title">description</div>
