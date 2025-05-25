@@ -193,10 +193,8 @@ function CrawlPannel({ getAllData, getAllDataLength, getAllUrls, getAllUrlsLengt
     <div className="template-base pannel">
       <div className="title">Crawl Pannel</div>
       <div className="template-content-base">
-        <a onClick={getAllData}>查詢所有news</a>
-        <a onClick={getAllDataLength}>查詢所有news數量</a>
-        <a onClick={getAllUrls}>查詢所有news urls</a>
-        <a onClick={getAllUrlsLength}>查詢所有news urls數量</a>
+        <a onClick={getAllData}>查詢新聞內容</a>
+        <a onClick={getAllUrls}>查詢新聞連結</a>
       </div>
     </div>
   )
