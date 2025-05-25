@@ -12,9 +12,9 @@ interface NewsItem {
 
 function OverviewElement({ title, value }: { title: string; value: string; }) {
   return (
-    <div className="overview-element">
+    <div className="overview-element" style={{ justifyContent: 'space-between' }}>
       <div className="title">{title}</div>
-      <div>{value}</div>
+      <div className="text-value">{value}</div>
     </div>
   )
 }
@@ -63,7 +63,7 @@ export default function DetailNewsItem() {
           const { src, alt, desc } = image_with_desc;
           return (
             <div key={idx} className="template-base overview" style={{ width: '90%', display: 'flex' }}>
-              <img style={{width: '40%'}} src={src} />
+              <img style={{ width: '40%' }} src={src} />
               <div style={{ marginLeft: '10px' }}>
                 <div>
                   <div className="title">description</div>

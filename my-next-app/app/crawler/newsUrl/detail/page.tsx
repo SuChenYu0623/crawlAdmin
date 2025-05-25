@@ -13,7 +13,7 @@ function OverviewElement({ title, value }: { title: string; value: string; }) {
   return (
     <div className="overview-element">
       <div className="title">{title}</div>
-      <div>{value}</div>
+      <div className="text-value">{value}</div>
     </div>
   )
 }

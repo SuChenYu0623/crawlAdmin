@@ -118,6 +118,13 @@ a:hover {
 
 .overview-element .title {
   margin-right: 5px;
+  width: 80px;
+  height: 40px;
+}
+
+.overview-element .text-value {
+  flex: 1 0 0;
+  word-break: break-word;
 }
 
 .template-base {
