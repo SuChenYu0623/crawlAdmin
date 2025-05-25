@@ -43,9 +43,9 @@ const apiGetBase = async (url: string) => {
     .then(res => res.json())
 }
 
-const fetchAllData = async () => await apiGetBase('/api/crawler/getAllData');
+const fetchAllData = async () => await apiGetBase('/api/crawler/getAllData?size=10');
 const fetchAllDataLength = async () => await apiGetBase('/api/crawler/getAllDataLength');
-const fetchAllUrls = async () : Promise<CrawlUrl[]> => await apiGetBase('/api/crawler/getAllUrls');
+const fetchAllUrls = async () : Promise<CrawlUrl[]> => await apiGetBase('/api/crawler/getAllUrls?size=10');
 const fetchAllUrlsLength = async () => await apiGetBase('/api/crawler/getAllUrlsLength');
 
 
@@ -288,10 +288,9 @@ export default function Crawler() {
         />
         <CrawlOverview crawlItemsLength={crawlItemsLength} />
       </div>
-      <div>
+      {/* <div>
         <CrawlItemsTable crawlItems={crawlItems} />
-      </div>
-      <div> ==== </div>
+      </div> */}
       <div>
         <BaseTable
           headerNames={['newsId', 'press', 'url', 'title']}

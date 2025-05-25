@@ -24,6 +24,11 @@ const routeList = [
     name: 'Scheduler',
     link: '/scheduler',
     image: 'https://cdn-icons-png.flaticon.com/512/9850/9850830.png'
+  },
+  {
+    name: 'ImageCaption',
+    link: '/imagecaption',
+    image: 'https://cdn-icons-png.flaticon.com/512/9850/9850830.png'
   }
 ]
 

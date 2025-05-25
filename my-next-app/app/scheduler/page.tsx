@@ -36,7 +36,7 @@ export default function Scheduler() {
   }
 
   const loopUrlsTask = async () => {
-    let payload = await fetchGetLoopUrlTaskPayload(10)
+    let payload = await fetchGetLoopUrlTaskPayload(100)
     console.log('payload', payload)
     let data = await fetchLoopUrlTask(JSON.stringify(payload));
     // let data = await fetchLoopUrlTask(5);
